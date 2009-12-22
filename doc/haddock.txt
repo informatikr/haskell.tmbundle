@@ -1,0 +1,29 @@
+http://www.haskell.org/haddock/doc/html/ch03s08.html
+
+-- *        → h1
+-- **       → h2
+
+$doc        → internal reference
+
+/'`"@<      → special characters
+
+$#…;        → character reference
+
+@…@         → code block
+> …         → code block
+
+'…'         → Hyperlinked Identifier
+
+/…/         → Emphasis
+
+"…"         → Hyperlinked Module
+
+*           → Itemized list
+-           → Itemized list
+
+(n)         → Enumerated list
+n.          → Enumerated list
+
+[@…@]       → Definition list
+
+<…>         → URL
