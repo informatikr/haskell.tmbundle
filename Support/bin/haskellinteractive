@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+ghci_output = `echo #{ARGV[0]} | ghci #{ENV["TM_FILEPATH"]}`
+
+# Skip lines until '>' (ghci's default-prompt) occurs.
+# Also drop the last line.
+irrelevant_line = true
+ghci_output.split( "\n" )[0..-2].each do |line|
+    if irrelevant_line && line.match(">")
+	    # first relevant line, drop prompt
+        puts line.split("> ")[1..-1].join("> ")
+        irrelevant_line = false
+    else
+        puts line unless irrelevant_line
+    end
+end
